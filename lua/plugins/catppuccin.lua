@@ -1,12 +1,15 @@
-  return { 
-    "catppuccin/nvim", 
-    lazy = false, 
-    name = "catppuccin", 
-    priority = 1000,
-    config = function()
-      -- configure catppuccin plugin
-      auto_integrations = true,
-      vim.cmd.colorscheme "catppuccin-macchiato"
-    end,
-  }
+return {
+  "catppuccin/nvim",
+  lazy = false,
+  name = "catppuccin",
+  priority = 1000,
+  opts = {},
+  config = function()
+    require("catppuccin").setup({
+      flavour = "macchiato",
+      auto_integraitions = true,
+    })
+    vim.cmd.colorscheme "catppuccin"
+  end,
+}
 

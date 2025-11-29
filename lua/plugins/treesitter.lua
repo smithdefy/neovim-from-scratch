@@ -1,16 +1,16 @@
-return { 
-  "nvim-treesitter/nvim-treesitter", 
-  branch = 'master', 
-  lazy = false, 
+return {
+  "nvim-treesitter/nvim-treesitter",
+  branch = 'master',
+  lazy = false,
   build = ":TSUpdate",
   config = function()
     local config = require("nvim-treesitter.configs")
     config.setup({
       -- Configure Treesitter for syntax highlighting
-      ensure_installed = { "lua", "javascript", "typescript", "markdown", "angular", "vue", "vimdoc", "vim", "yang", "yaml", "bash", "csv", "dockerfile", "editorconfig", "gitignore", "groovy", "html", "css", "java", "powershell" },
+      --ensure_installed = { "lua", "javascript", "typescript", "markdown", "angular", "vue", "vimdoc", "vim", "yang", "yaml", "bash", "csv", "dockerfile", "editorconfig", "gitignore", "groovy", "html", "css", "java", "powershell" },
 
-      indent = { 
-        enable = true 
+      indent = {
+        enable = true
       },
 
       -- Install parsers synchronously (only applied to `ensure_installed`)
@@ -33,9 +33,9 @@ return {
         -- disable highlighting for the `tex` filetype, you need to include `latex` in this list as this is
         -- the name of the parser)
         -- list of language that will be disabled
-        disable = { "c", "rust" },
+        --disable = { "c", "rust" },
         -- Or use a function for more flexibility, e.g. to disable slow treesitter highlight for large files
-        disable = function(lang, buf)
+        disable = function(_, buf)
           local max_filesize = 100 * 1024 -- 100 KB
           local ok, stats = pcall(vim.loop.fs_stat, vim.api.nvim_buf_get_name(buf))
           if ok and stats and stats.size > max_filesize then
