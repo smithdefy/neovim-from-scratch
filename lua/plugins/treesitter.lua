@@ -7,8 +7,6 @@ return {
     local config = require("nvim-treesitter.configs")
     config.setup({
       -- Configure Treesitter for syntax highlighting
-      --ensure_installed = { "lua", "javascript", "typescript", "markdown", "angular", "vue", "vimdoc", "vim", "yang", "yaml", "bash", "csv", "dockerfile", "editorconfig", "gitignore", "groovy", "html", "css", "java", "powershell" },
-
       indent = {
         enable = true
       },
